@@ -127,7 +127,14 @@ export function initialize(): void {
     $("#userlist-toggle-button").on("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-
+        //control icons visibility
+        if ($("body").hasClass("hide-right-sidebar")) {
+            $("#zulip-icon-panel-right").hide();
+            $("#zulip-icon-panel-right-dashed").show();
+        } else {
+            $("#zulip-icon-panel-right").show();
+            $("#zulip-icon-panel-right-dashed").hide();
+        }        
         if (window.innerWidth >= media_breakpoints_num.xl) {
             $("body").toggleClass("hide-right-sidebar");
             if (!$("body").hasClass("hide-right-sidebar")) {
@@ -147,7 +154,14 @@ export function initialize(): void {
     $(".left-sidebar-toggle-button").on("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-
+        //control icons visibility
+        if ($("body").hasClass("hide-left-sidebar")) {
+            $("#zulip-icon-panel-left").hide();
+            $("#zulip-icon-panel-left-dashed").show();
+        } else {
+            $("#zulip-icon-panel-left").show();
+            $("#zulip-icon-panel-left-dashed").hide();
+        }   
         if (window.innerWidth >= media_breakpoints_num.md) {
             $("body").toggleClass("hide-left-sidebar");
             if (
